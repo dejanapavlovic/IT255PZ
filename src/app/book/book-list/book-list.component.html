@@ -1,0 +1,19 @@
+<ul *ngIf="books$ | async as books; else loading" [@listAnimation]="books">
+    <li *ngFor="let book of books">
+    <a [routerLink]="book.id">
+        <img [src]="book.image" />
+    </a>
+    </li>
+</ul>
+
+<ng-template #loading>
+    <ul [@listAnimation]="loadingBooks" [@listAnimation]
+    ="loadingBooks">
+        <li *ngFor="let book of loadingBooks" [@listAnimation]
+        ="loadingBooks">
+            <img src="/assets/slika.png" />
+        </li>
+
+    </ul>
+
+</ng-template>
